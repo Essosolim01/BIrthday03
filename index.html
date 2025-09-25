@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Joyeux Anniversaire - 26 Septembre 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 25px;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-date {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.6);
+        }
+        
+        /* Photo Section */
+        .photo-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 50px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .photo-frame {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #6c5ce7);
+            padding: 8px;
+            animation: photoRotate 10s linear infinite;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #ff6b9d, #6c5ce7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        /* Wishes Section */
+        .wishes-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .wishes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .wishes-form {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(108, 92, 231, 0.6);
+        }
+        
+        .wishes-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        
+        .wish-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: wishAppear 0.5s ease-out;
+        }
+        
+        .wish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .wish-author {
+            font-weight: 600;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .wish-text {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        /* Canvas Animations */
+        .canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2d3436, #636e72);
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 107, 157, 0.8), 0 0 40px rgba(108, 92, 231, 0.6);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes photoRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes wishAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-date {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .wishes-display {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-frame {
+                width: 280px;
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎉 Anniversaire</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#photo">Photo</a></li>
+                <li><a href="#wishes">Souhaits</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">Joyeux Anniversaire ! 🎂</h1>
+            <p class="hero-subtitle">Une journée spéciale pour une personne spéciale</p>
+            <div class="hero-date">26 Septembre 2025</div>
+            <a href="#wishes" class="cta-button">Laissez vos souhaits ✨</a>
+        </div>
+    </section>
+
+    <!-- Photo Section -->
+    <section id="photo" class="photo-section">
+        <h2 class="section-title">Notre Star du Jour 🌟</h2>
+        <div class="photo-frame">
+            <div class="photo-inner">
+                <div class="photo">
+                    <img src="../IMG-20250924-WA0006.jpg" alt="Photo d'anniversaire" class="photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="wishes-section">
+        <div class="wishes-container">
+            <h2 class="section-title">Partagez vos Souhaits 💝</h2>
+            
+            <form class="wishes-form" id="wishForm">
+                <div class="form-group">
+                    <label for="name">Votre Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="wish">Votre Souhait :</label>
+                    <textarea id="wish" name="wish" rows="4" required placeholder="Écrivez votre message d'anniversaire..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer mon souhait 🎈</button>
+            </form>
+
+            <div class="wishes-display" id="wishesDisplay">
+                <!-- Les souhaits apparaîtront ici -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Merci d'être là ! 💖</h3>
+            <p class="footer-text">
+                Chaque année est une nouvelle aventure, et nous sommes heureux de la célébrer avec vous. 
+                Que cette journée soit remplie de joie, de rires et de beaux souvenirs !
+            </p>
+        </div>
+    </footer>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container">
+        <canvas id="particlesCanvas"></canvas>
+    </div>
+
+    <script>
+        // Canvas pour les animations de cœurs et trèfles
+        const heroCanvas = document.getElementById('heroCanvas');
+        const particlesCanvas = document.getElementById('particlesCanvas');
+        
+        // Redimensionner les canvas
+        function resizeCanvases() {
+            heroCanvas.width = window.innerWidth;
+            heroCanvas.height = window.innerHeight;
+            particlesCanvas.width = window.innerWidth;
+            particlesCanvas.height = window.innerHeight;
+        }
+        
+        resizeCanvases();
+        window.addEventListener('resize', resizeCanvases);
+        
+        // Animation des particules flottantes
+        const heroCtx = heroCanvas.getContext('2d');
+        const particlesCtx = particlesCanvas.getContext('2d');
+        
+        class Particle {
+            constructor(canvas, isHero = false) {
+                this.canvas = canvas;
+                this.ctx = isHero ? heroCtx : particlesCtx;
+                this.reset();
+                this.y = Math.random() * canvas.height;
+                this.symbol = Math.random() > 0.5 ? '💖' : '🍀';
+                this.fontSize = Math.random() * 20 + 15;
+            }
+            
+            reset() {
+                this.x = Math.random() * this.canvas.width;
+                this.y = this.canvas.height + 50;
+                this.speed = Math.random() * 2 + 1;
+                this.drift = Math.random() * 2 - 1;
+                this.opacity = Math.random() * 0.8 + 0.2;
+                this.rotation = 0;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+            }
+            
+            update() {
+                this.y -= this.speed;
+                this.x += this.drift;
+                this.rotation += this.rotationSpeed;
+                
+                if (this.y < -50 || this.x < -50 || this.x > this.canvas.width + 50) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                this.ctx.save();
+                this.ctx.globalAlpha = this.opacity;
+                this.ctx.font = `${this.fontSize}px Arial`;
+                this.ctx.translate(this.x, this.y);
+                this.ctx.rotate(this.rotation);
+                this.ctx.fillText(this.symbol, -this.fontSize/2, this.fontSize/2);
+                this.ctx.restore();
+            }
+        }
+        
+        // Créer les particules
+        const heroParticles = [];
+        const floatingParticles = [];
+        
+        for (let i = 0; i < 30; i++) {
+            heroParticles.push(new Particle(heroCanvas, true));
+        }
+        
+        for (let i = 0; i < 15; i++) {
+            floatingParticles.push(new Particle(particlesCanvas, false));
+        }
+        
+        // Animation principale
+        function animate() {
+            // Clear canvases
+            heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+            particlesCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
+            
+            // Update et draw particles
+            heroParticles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            floatingParticles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Gestion du formulaire de souhaits
+        const wishForm = document.getElementById('wishForm');
+        const wishesDisplay = document.getElementById('wishesDisplay');
+        let wishes = [
+            {
+                name: "Pierrette",
+                wish: "Joyeux anniversaire ! Que cette nouvelle année t'apporte tout le bonheur du monde ! 🎉✨"
+            },
+            {
+                name: "reine",
+                wish: "Une année de plus, une année de bonheur en plus ! Profite bien de ta journée spéciale ! 🎂💖"
+            },
+            {
+                name: "Emanuel",
+                wish: "Happy Birthday ! Tu mérites tous les plus beaux moments de la vie ! 🌟🎈"
+            }
+        ];
+        
+        function displayWishes() {
+            wishesDisplay.innerHTML = '';
+            wishes.forEach(wish => {
+                const wishCard = document.createElement('div');
+                wishCard.className = 'wish-card';
+                wishCard.innerHTML = `
+                    <div class="wish-author">💝 ${wish.name}</div>
+                    <div class="wish-text">${wish.wish}</div>
+                `;
+                wishesDisplay.appendChild(wishCard);
+            });
+        }
+        
+        wishForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const wish = document.getElementById('wish').value;
+            
+            if (name && wish) {
+                wishes.push({ name, wish });
+                displayWishes();
+                
+                // Reset form
+                wishForm.reset();
+                
+                // Show success message
+                alert('🎉 Votre souhait a été ajouté avec succès !');
+                
+                // Create celebration effect
+                createCelebrationEffect();
+            }
+        });
+        
+        // Effet de célébration
+        function createCelebrationEffect() {
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    floatingParticles.push(new Particle(particlesCanvas, false));
+                }, i * 100);
+            }
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.25)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.15)';
+            }
+        });
+        
+        // Initialiser l'affichage des souhaits
+        displayWishes();
+        
+        // Ajouter des particules sur clic
+        document.addEventListener('click', function(e) {
+            for (let i = 0; i < 5; i++) {
+                const particle = new Particle(particlesCanvas);
+                particle.x = e.clientX;
+                particle.y = e.clientY;
+                floatingParticles.push(particle);
+            }
+        });
+    </script>
+</body>
+</html>
