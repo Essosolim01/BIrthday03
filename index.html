@@ -687,7 +687,62 @@
                 floatingParticles.push(particle);
             }
         });
+        // Liste des images à faire défiler
+const images = [
+    './IMG-20250924-WA0006.jpg',
+    './WhatsApp Image 2025-09-24 at 12.27.11.jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.07.jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.08 (1).jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.08 (2).jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.08.jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.09.jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.10 (1).jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.10 (2).jpeg',
+    './WhatsApp Image 2025-09-25 at 11.19.10.jpeg'
+];
+
+let currentImageIndex = 0;
+
+function rotateImages() {
+    const photoElement = document.querySelector('.photo img');
+    
+    if (photoElement && images.length > 0) {
+        // Effet de fondu pour transition fluide
+        photoElement.style.opacity = '0.3';
+        
+        setTimeout(() => {
+            // Changer l'image
+            photoElement.src = images[currentImageIndex];
+            
+            // Passer à l'image suivante
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            
+            // Restaurer l'opacité
+            photoElement.style.opacity = '1';
+        }, 200); // Délai pour l'effet de transition
+    }
+}
+
+// Démarrer la rotation automatique
+setInterval(rotateImages, 3000); // 3000ms = 3 secondes
+
+// Version avec transition CSS plus fluide (optionnel)
+function initSmoothTransition() {
+    const photoElement = document.querySelector('.photo img');
+    if (photoElement) {
+        photoElement.style.transition = 'opacity 0.5s ease-in-out';
+    }
+}
+
+// Initialiser au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    initSmoothTransition();
+    
+    // Optionnel : démarrer immédiatement la première rotation
+    setTimeout(rotateImages, 1000);
+});
     </script>
 </body>
 
 </html>
+
